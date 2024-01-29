@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shaw's Fitness Studio and Juice Bar</title>
+    <link rel="stylesheet" href="style.css"> <!--style sheet link-->
+    
+    <id="#top">
+    <h1><a href="index.html">SHAW'S FITNESS STUDIO AND JUICE BAR!</a></h1>
+    <!--page to page linking-->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="JoinUs.html" target="_blank">Join Us</a></li>
+    </ul>
+    <hr>
+    <!--in-page links-->
+    <ul>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#fruitbar">Welcome to Our Fruit Bar</a></li>
+        <li><a href="#goatyoga">Our Goat Yoga</a></li>
+        <li><a href="#loc">Locations</a></li>
+    </ul>
+    
+</head>
+
+<!-- JavaScript Code -->
+<script>
+    alert("WELCOME TO SHAW'S FITNESS STUDIO AND JUICE BAR!!!")
+
+    var gym1 = new Image();
+    var crossfit = new Image();
+    var juicebar = new Image();
+    var juicebar1 = new Image();
+    var goat = new Image();
+    var goat1 = new Image();
+    var juice = { green: "10 percent off" }; // Example value
+
+    function initPage() {
+        gym1.src = "gym1.jpeg";
+        crossfit.src = "crossfit.jpeg";
+        juicebar.src = "juicebar.jpeg";
+        juicebar1.src = "juicebar1.jpeg";
+        goat.src = "goat.jpeg";
+        goat1.src = "goat1.jpeg";
+        checkJuiceBarDiscount();
+    }
+
+    function gym() {
+        document.exercise.src = gym1.src;
+    }
+
+    function cross() {
+        document.exercise.src = crossfit.src;
+    }
+
+    function green() {
+        document.bar.src = juicebar.src;
+    }
+
+    function berry() {
+        document.bar.src = juicebar1.src;
+    }
+    function yoga() {
+        document.goats.src = goat.src;
+    }
+    function yoga1() {
+        document.goats.src = goat1.src;
+    }
+
+</script>
+
+<body onload="initPage()">
+    <a href="webpage.html" onmouseout="gym()" onmouseover="cross()">
+        <img name= exercise src="gym1.jpeg" alt="gym" width="1600" height="600"/>
+    </a>
+<hr>
+<h2 id="aboutus">About Us</h2>
+    <p><b>In the distance, 2006 twin brothers and high school students Nataly Shaw "Naty" and John Shaw "Jonny" <br>
+        decided to train for a local triathlon back in their motherland Colombia.<br>
+        they were joined by other students with the purpose of trainning with<br>
+        them, for their annual triathlon. For thier surprise the day of the triathlon <br>
+        came and Naty and Jonny lost, but one of their classmates that they trained won.<br>
+        So that day the idea was born of training others for success.<br><br>
+        After more than 10 years of operating, Shaw's Fitness Studio and Juice Bar is not the average fitness studio,<br>
+        It offers personalized training adaptive to your needs. Our Services Includes<br>
+        Power Sculpt, Spin, Zumba, Yoga, Goat Yoga, Crossfit, and body design,<br>
+        We also offer rehabilitation and water therapies by our certified professionals.</b></p>
+
+<hr>
+
+<h2 id="loc">Locations</h2>
+
+<hr>
+
+    <div class="row">
+        <div class="column">
+            <table>
+                <caption id="loc1">GARDEN CITY</caption>
+                <tr>
+                    <td>Long Island, NY</td>
+                    <td>(516) 123-456-8910</td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <caption id="loc2">FLORAL PARK</caption>
+                <tr>
+                    <td>Long Island, NY </td>
+                    <td>(516) 456-999-0000</td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <caption id="loc3">DUMBO</caption>
+                <tr>
+                    <td>Brooklyn, NY </td>
+                    <td>(516) 456-999-0000</td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <caption id="loc4">SOHO</caption>
+                <tr>
+                    <td>Manhattan, NY</td>
+                    <td>(212) 456-999-0000</td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+        <!---end of table locations-->
+
+    <hr>
+    
+<!--juice bar-->
+
+<body onload="startup()">
+        <div align="right" class="container">
+            <div class="text-side">
+                <h2 id="fruitbar">Welcome to our Fruit Bar!</h2>
+                <p>Our organic fruit-based bar has as it's purpose the well-being<br>
+                of our gym members. Our fresh and Non-GMO fruits and vegetables<br>
+                provide vitamins, minerals, and antioxidants to give an <br>
+                energy boost to our members before or after a workout.<br><br>
+                Shaw's Fitness Studio's goal is to offer healthy, convinient,<br>
+                and accessibility with On-the-Go low-Calorie options with<br>
+                fruit and vegetable smoothies. <br><br>
+                All this is supporting our local farms and promoting organic<br>
+                food through education awareness, animal well-being, and
+                supporting practices that are better for people and the planet.<br>
+            </div>
+
+        <a href="webpage.html" onmouseout="green()" onmouseover="berry()">
+            <img name="bar" src="juicebar1.jpeg" alt="bar" width="900" height="500" float="right"/>
+        </a>
+        </div><br>
+
+        <hr>
+    <!--Goat Yoga-->
+
+        <div class="text-side-left">
+            <h2 id="goatyoga">Our Goat Yoga</h2>
+            <p>Our goat yoga, we practice yoga poses in the company of goats.<br>
+            During a goat yoga class, our goats are allowed to roam freely <br>
+            around the yoga participants, and they interact with the yogis <br>
+            by walking on them, nuzzling, or simply being present. <br><br>
+            The idea is to combine the therapeutic benefits of yoga with the playful<br>
+            and calming presence of goats, creating a unique and enjoyable <br>
+            experience for participants, and goats. Our clases are conducted<br>
+            in our local farm where you can also learn how we care about our goats.</p>
+
+            <p>If You Wish Information About Goat Yoga, Please Click Below.</p><br>
+
+            <a href="https://www.anahana.com/en/wellbeing-blog/yoga/what-is-goat-yoga" target="_blank">Please Click Here.</a><br><br>
+        </div>
+        
+        <a href="webpage.html" onmouseout="yoga()" onmouseover="yoga1()">
+            <img name="goats" src="goat1.jpeg" alt="person doing goat yoga" width="500" height="400" float="left"/>
+        </a>
+
+    <hr><hr>
+
+    <div>
+        <p>Please Contact Us by Email For More Information About our Services!<br><br>
+        <!--mail to link-->
+        <a href="mailto:sonia.shaw@mail.citytech.cuny.edu">Click Here</a></p><br/><br/>
+    </div>
+        
+    <hr><hr>
+        
+    <div>
+        <h1><a href="index.html">SHAW'S FITNESS STUDIO AND JUICE BAR!</a></h1>
+    <!--page to page linking-->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="JoinUs.html" target="_blank">Join Us</a></li>
+    </ul>
+    </div>
+
+    <hr>
+
+    <div>
+        <ul>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#fruitbar">Welcome to Our Fruit Bar</a></li>
+            <li><a href="#goatyoga">Our Goat Yoga</a></li>
+            <li><a href="#loc">Locations</a></li>
+            
+        </ul>
+    </div>
+
+    <hr>
+
+    <a href="#top">Back to Inicio</a>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <!--style sheet linking-->
+    <title>Shaw's Fitness Studio and Juice</title>
+    <link rel="stylesheet" href="style2.css" />
+
+    <hr />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        //i used const instead of var to make sure the variables used in validation
+        //cannot be reassigned with another value.
+        let users = [];
+
+        function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+
+        function validatePassword(password) {
+          const hasRequiredLength =
+            password.length >= 8 && password.length <= 12;
+          const hasNumbers = /\d/.test(password);
+          return hasRequiredLength && hasNumbers;
+        }
+
+        function isUsernameTaken(username) {
+          return users.some((user) => user.username === username);
+        }
+
+        function validatePhoneNumber(phone) {
+          return phone.length === 10 && /^\d+$/.test(phone);
+        }
+
+        function validateForm() {
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const phone = document.getElementById("phone").value;
+
+          if (!name.match(/^[a-zA-Z ]+$/)) {
+            alert("The Name Can only Contain Letters.");
+            return false;
+          }
+
+          if (!validateEmail(email)) {
+            alert("Please Enter a Valid Email Address.");
+            return false;
+          }
+
+          if (!validatePassword(password)) {
+            alert(
+              "Password Must Have 8 to 12 Characteres and at Least 2 Numbers."
+            );
+            return false;
+          }
+
+          if (isUsernameTaken(username)) {
+            alert("Username Already in Use.");
+            return false;
+          }
+
+          if (!validatePhoneNumber(phone)) {
+            alert("Phone Number Must Have at Least 10 Numbers.");
+            return false;
+          }
+          return true;
+        }
+        document
+          .getElementById("submit")
+          .addEventListener("click", function () {
+            if (validateForm()) {
+              const newUser = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                city: document.getElementById("city").value,
+                phone: document.getElementById("phone").value,
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+                membership: document.querySelector(
+                  'input[name="membership"]:checked'
+                )?.value,
+                service: Array.from(
+                  document.querySelectorAll('input[name="service"]:checked')
+                ).map((el) => el.value),
+              };
+
+              if (!newUser.membership || newUser.service.length === 0) {
+                alert("Please, Select One Membership and Service to Register.");
+                return;
+              }
+
+              users.push(newUser);
+              alert("Congratulations! Resgistration Successful.");
+            }
+          });
+
+        document.getElementById("clear").addEventListener("click", function () {
+          document.getElementById("personalInfo").reset();
+          document
+            .querySelectorAll('input[type="radio"], input[type="checkbox"]')
+            .forEach((input) => (input.checked = false));
+        });
+
+        document
+          .getElementById("loginButton")
+          .addEventListener("click", function () {
+            const loginUsername =
+              document.getElementById("loginUsername").value;
+            const loginPassword =
+              document.getElementById("loginPassword").value;
+
+            const user = users.find(
+              (u) =>
+                u.username === loginUsername && u.password === loginPassword
+            );
+
+            if (user) {
+              alert("Succesful Login.");
+            } else {
+              alert("User Does Not Exist, Please Register.");
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Shaw's Fitness Studio and Juice</h1>
+      <!--page to page linking-->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="JoinUs.html" target="_blank">Join Us</a></li>
+      </ul>
+    </div>
+
+    <div id="registration">
+      <div id="myDiv">
+        <h4>Membership Registration</h4>
+      </div>
+
+      <!-- step 1 -->
+      <div id="step1">
+        <h3>Step 1: Personal Information</h3>
+        <form id="personalInfo">
+          <input type="text" id="name" placeholder="Name" />
+          <input type="email" id="email" placeholder="Email" />
+          <input type="text" id="city" placeholder="City" />
+          <input type="tel" id="phone" placeholder="Phone Number" />
+          <input type="text" id="username" placeholder="Username" />
+          <input type="password" id="password" placeholder="Password" />
+        </form>
+      </div>
+
+      <!-- step 2 -->
+      <div id="step2">
+        <h3>Step 2: Choose Your Membership Level</h3>
+        <input type="radio" id="exercise" name="membership" value="Silver" />
+        <label for="silver">Silver</label><br />
+        <input type="radio" id="exercise" name="membership" value="Gold" />
+        <label for="gold">Gold</label><br />
+        <input type="radio" id="exercise" name="membership" value="Platinum" />
+        <label for="platinum">Platinum</label>
+      </div>
+
+      <!-- step 3 -->
+      <div id="step3">
+        <h3>Step 3: Choose Your Services</h3>
+        <div class="service-option">
+          <input
+            type="checkbox"
+            id="exercise"
+            name="service"
+            value="Crossfit"
+          />
+          <label for="crossfit">Crossfit</label>
+        </div>
+
+        <input type="checkbox" id="exercise" name="service" value="Spin" />
+        <label for="spin">Spin</label><br />
+        <input type="checkbox" id="exercise" name="service" value="Yoga" />
+        <label for="yoga">Yoga</label><br />
+        <input type="checkbox" id="exercise" name="service" value="Goat Yoga" />
+        <label for="yoga">Goat Yoga</label><br />
+        <input type="checkbox" id="exercise" name="service" value="Zumba" />
+        <label for="yoga">Zumba</label><br />
+        <input type="checkbox" id="exercise" name="service" value="therapy" />
+        <label for="yoga">Therapy</label><br />
+      </div>
+
+      <!-- final buttons -->
+      <div id="finalActions">
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+    </div>
+
+    <div id="login">
+      <h2>Enter Your Username</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button type="button" id="loginButton">Enter</button>
+        <button type="button" id="ClearButton">Clear</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("ClearButton")
+        .addEventListener("click", function () {
+          document.getElementById("loginForm").reset();
+        });
+    </script>
+  </body>
+</html>

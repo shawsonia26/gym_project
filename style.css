@@ -1,0 +1,119 @@
+body {
+  background-color: rgb(28, 25, 25);
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+h1 {
+  background-color: rgb(199, 154, 41);
+  color: whitesmoke;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 36px;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 3px 15px goldenrod;
+}
+li {
+  display: inline;
+  margin: 0 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: rgb(11, 33, 156);
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 2px solid #d7dbd1;
+}
+
+p {
+  text-align: left;
+  font-size: 20px;
+  color: #bfd2bf;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 2px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid goldenrod;
+}
+tr {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+td {
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+}
+#loc1,
+#loc2,
+#loc3,
+#loc4 {
+  background-color: darkgoldenrod;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  box-shadow: 0px 3px 15px white;
+}
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+.text-side {
+  float: left;
+  width: calc(50%-40px);
+  margin-right: 150px;
+}
+.text-side-left {
+  float: right;
+  width: calc(50%-40px);
+  margin-right: 200px;
+}
+
+div,
+h2,
+p {
+  background-color: #181c18;
+  color: white;
+  text-align: center;
+}
+div a {
+  font-size: 22px;
+  color: white;
+  text-align: center;
+}
+#my-div {
+  text-align: center;
+}
